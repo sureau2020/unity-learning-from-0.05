@@ -40,4 +40,42 @@ PS 有时候真把用户当小孩哄，感觉比那个 scratch 更适合推荐�
 - 层次结构窗口中的块变为蓝色，表示它是预制件的副本或实例
 - 双击 Block 预制件进入预制件编辑模式
 - 右键单击 ​​ 选定的块创建空父级
+- 主摄像机带音频监听器，不允许在一个场景中拥有多个活动的音频监听器
+- 每个 Audio Source 播放一个音频片段
+- Audio Source 组件中，找到 Spatial Blend 属性并将滑块从 0 （完全 2D）拖动到 1 （完全 3D）
+- component: Play Sound at Random Intervals
+- Collider 组件的 Is Trigger 取消物理碰撞但检测碰撞
+- 至少其中一个对象附加了 Rigidbody 组件时，才会调用 OnTriggerEnter 函数
+
+## 针对 unity 的 C# 入门
+
+主要记录和 JAVA 不一样的地方和我记得模糊的地方
+
+### 特性
+
+- C# 编写的脚本是可编辑的组件
+- public 在 editor 的 Inspector 中公开变量
 -
+
+### 语法
+
+- public class Collectible : MonoBehaviour //继承自 MonoBehaviour（a required class for all GameObjects in Unity）
+- transform.Rotate(0, 1, 0);//xyz 旋转一度
+- 在数字末尾加上“f”来明确表明它是浮点数
+- gameObject 指自己
+- Instantiate(谁, position, rotation);//实例化
+- other.CompareTag("Player")// other 是玩家不
+- bool  
+  网上找了个针对 java 开发者的[cheat sheet](./Cheat%20Sheet.pdf)  
+  看了一下有点像 java 混了点 c++，具体语言特性明天再看吧
+
+### 代码规范
+
+- script 名字、method 名字 PascalCase
+- var 名字 camelCase
+
+---
+
+今天先这样吧，完成了 unity3D 的入门，简单看了一下编程部分  
+明天搞 2D 入门、尝试打包、shader graph 入门  
+另外 unity2022 版本的打包教程是坏的，明天可能跟着 6.0 摸索打包
